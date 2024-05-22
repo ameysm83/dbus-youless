@@ -54,7 +54,7 @@ class DbusYoulessP1Service(object):
         # add path values to dbus
         for path, settings in self._paths.items():
           self._dbusservice.add_path(
-            path, settings['initial'], gettextcallback=settings['textformat'], writeable=True, onchangecallback=self._handlechangedvalue)
+            path, settings['initial'], gettextcallback=settings['textformat'], writeable=True)
     
         # last update
         self._lastUpdate = 0
@@ -131,8 +131,8 @@ def main():
                 })
         mainloop = gobject.MainLoop()
         mainloop.run()            
-    except:
-        print('Error')
+    except Exception as error:
+        print('An error occurred', error)
         
 if __name__ == "__main__":
     main()
