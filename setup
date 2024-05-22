@@ -35,7 +35,7 @@ if [ "$scriptAction" == 'INSTALL' ] ; then
 
     logMessage "++ Installing Victron Dbus Youless LS120 P1 service"
 
-    installService "$packageName"
+    installService $packageName
 fi
 
 #### uninstalling - check scriptAction again
@@ -43,6 +43,6 @@ fi
 if [ "$scriptAction" == 'UNINSTALL' ] ; then
     logMessage "++ Uninstalling Victron Dbus Youless LS120 P1 service"
 
-    removeService "$packageName"
+    removeService $packageName
 fi
 endScript
