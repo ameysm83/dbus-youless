@@ -1,0 +1,3 @@
+## dbus-youless
+
+This application reads data from a youless LS120 energy monitor and turns it into a grid meter service on dbus. 

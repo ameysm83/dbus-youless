@@ -79,14 +79,6 @@ class DbusYoulessP1Service(object):
             self._dbusservice['/Ac/L3/Power'] = self._api.phase3.power.value
             self._dbusservice['/Ac/Energy/Forward'] = ((self._api.power_meter.low.value + self._api.power_meter.high.value)/1000)
             self._dbusservice['/Ac/Energy/Reverse'] = ((self._api.delivery_meter.low.value + self._api.delivery_meter.high.value)/1000)
-            # self._dbusservice['/Ac/L1/Energy/Forward'] = (meter_data['emeters'][0]['total']/1000)
-            # self._dbusservice['/Ac/L2/Energy/Forward'] = (meter_data['emeters'][1]['total']/1000)
-            # self._dbusservice['/Ac/L3/Energy/Forward'] = (meter_data['emeters'][2]['total']/1000)
-            # self._dbusservice['/Ac/L1/Energy/Reverse'] = (meter_data['emeters'][0]['total_returned']/1000) 
-            # self._dbusservice['/Ac/L2/Energy/Reverse'] = (meter_data['emeters'][1]['total_returned']/1000) 
-            # self._dbusservice['/Ac/L3/Energy/Reverse'] = (meter_data['emeters'][2]['total_returned']/1000) 
-
-            # increment UpdateIndex - to show that new data is available an wrap
             self._dbusservice['/UpdateIndex'] = (self._dbusservice['/UpdateIndex'] + 1 ) % 256
 
             #update lastupdate vars
@@ -136,12 +128,6 @@ def main():
                 '/Ac/L1/Power': {'initial': 0, 'textformat': _w},
                 '/Ac/L2/Power': {'initial': 0, 'textformat': _w},
                 '/Ac/L3/Power': {'initial': 0, 'textformat': _w},
-                # '/Ac/L1/Energy/Forward': {'initial': 0, 'textformat': _kwh},
-                # '/Ac/L2/Energy/Forward': {'initial': 0, 'textformat': _kwh},
-                # '/Ac/L3/Energy/Forward': {'initial': 0, 'textformat': _kwh},
-                # '/Ac/L1/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
-                # '/Ac/L2/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
-                # '/Ac/L3/Energy/Reverse': {'initial': 0, 'textformat': _kwh},
                 })
         mainloop = gobject.MainLoop()
         mainloop.run()            
