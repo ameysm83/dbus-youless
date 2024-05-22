@@ -12,8 +12,8 @@ packageLogFile="/var/log/dbus-youless/current"
 
 #### following line incorporates SetupHelper utilities into this script
 # Refer to the SetupHelper ReadMe file for details.
-
-source "/data/SetupHelper/CommonResources"
+source "/data/SetupHelper/HelperResources/IncludeHelpers"
+#source "/data/SetupHelper/CommonResources"
 
 # GitHub account info - fill in as appropriate
 # to include this package in SetupHelper automatic updates
