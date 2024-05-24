@@ -1,3 +1,3 @@
 #!/bin/sh
 exec 2>&1
-exec /data/BatteryAggregator/battery_service.py
+python /data/dbus-youless/dbus-youless.py
